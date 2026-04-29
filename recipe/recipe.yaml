@@ -11,7 +11,7 @@ source:
   target_directory: src
 
 build:
-  number: 0
+  number: 1
   script:
     - cd src
     - if: unix
@@ -33,10 +33,10 @@ requirements:
 
 tests:
   - script:
-    - if: win
-      then: ini-file --help 2>&1 | findstr /c:"Usage:" >nul
-    - if: unix
-      then: ini-file --help 2>&1 | grep -q "Usage:"
+      - if: win
+        then: ini-file --help 2>&1 | findstr /c:"Usage:" >nul
+      - if: unix
+        then: ini-file --help 2>&1 | grep -q "Usage:"
   - package_contents:
       bin:
         - ini-file
