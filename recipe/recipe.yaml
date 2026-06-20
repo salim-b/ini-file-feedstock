@@ -26,7 +26,7 @@ build:
 
 requirements:
   build:
-    - ${{ compiler("go-nocgo") }}
+    - ${{ compiler('go-nocgo') }}
     - go-licenses
 
 tests:
